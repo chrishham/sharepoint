@@ -13,18 +13,20 @@
 
 ## <a name="gettingStarted"></a>Getting Started
 
-```
+```javascript
 const Sharepoint = require('@wmfs/sharepoint')
 const sp = new Sharepoint('URL HERE')
 
-sp.authenticate()
-sp.getWebEndpoint()
-sp.getContents(path)
-sp.createFolder(path)
-sp.deleteFolder(path)
-sp.createFile(options) // options = { path, fileName, data }
-sp.deleteFile(options) // options = { path, fileName }
-sp.createFileChunked(options) // options = { path, fileName, stream, fileSize, chunkSize }
+;(async () => {
+    await sp.authenticate()
+    await sp.getWebEndpoint()
+    await sp.getContents(path)
+    await sp.createFolder(path)
+    await sp.deleteFolder(path)
+    await sp.createFile(options) // options = { path, fileName, data }
+    await sp.deleteFile(options) // options = { path, fileName }
+    await sp.createFileChunked(options) // options = { path, fileName, stream, fileSize, chunkSize }
+})()
 ```
 
 ## <a name="test"></a>Test
